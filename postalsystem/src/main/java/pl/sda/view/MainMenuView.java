@@ -2,6 +2,8 @@ package pl.sda.view;
 
 import pl.sda.Model.ParcelInfo;
 import pl.sda.controller.MainMenuController;
+import pl.sda.repository.ParcelRepository;
+import pl.sda.service.ParcelService;
 import pl.sda.utils.ScannerOperationValidator;
 
 import java.util.Scanner;
@@ -11,7 +13,7 @@ public class MainMenuView {
   private MainMenuController controller;
 
   public MainMenuView(){
-    controller = new MainMenuController(this);
+    controller = new MainMenuController(this, new ParcelService(new ParcelRepository()));
     init();
   }
 
@@ -68,7 +70,7 @@ public class MainMenuView {
     ParcelInfo parcelInfo = new ParcelInfo();
     //TODO: Pobierz od użytkownika informacje o przesyłce.
 
-    String parcelId = controller.sendParcel(parcelInfo);
+    int  parcelId = controller.sendParcel(parcelInfo);
 
     System.out.println("Paczka o identyfikatorze: " + parcelId + " została nadana poprawnie.");
   }

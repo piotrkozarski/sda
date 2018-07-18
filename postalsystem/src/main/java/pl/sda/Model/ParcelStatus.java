@@ -1,6 +1,6 @@
 package pl.sda.Model;
 
-public enum Status {
+public enum ParcelStatus {
 
   NEW, PROCESSING, FINISHED;
 

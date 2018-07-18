@@ -1,5 +1,7 @@
 package pl.sda.view;
 
+import pl.sda.Model.Address;
+import pl.sda.Model.Customer;
 import pl.sda.Model.ParcelInfo;
 import pl.sda.controller.MainMenuController;
 import pl.sda.repository.ParcelRepository;
@@ -69,6 +71,32 @@ public class MainMenuView {
   private void sendParcel() {
     ParcelInfo parcelInfo = new ParcelInfo();
     //TODO: Pobierz od użytkownika informacje o przesyłce.
+    Customer shipper = new Customer();
+    shipper.setName("jan");
+    shipper.setLastName("kowalski");
+
+    Address shipmentAddress = new Address();
+    shipmentAddress.setCity("Szczecin");
+    shipmentAddress.setStreet("zbożowa");
+    shipmentAddress.setZipCode("71-123");
+
+    shipper.setAddress(shipmentAddress);
+
+    Customer receiver = new Customer();
+    receiver.setName("adam");
+    receiver.setLastName("nowak");
+
+    Address receiverAddres = new Address();
+    receiverAddres.setCity("warszawa");
+    receiverAddres.setStreet("Jagiellońska");
+    receiverAddres.setZipCode("00-950");
+
+    receiver.setAddress(receiverAddres);
+
+
+    parcelInfo.setShipper(shipper);
+    parcelInfo.setReceiver(receiver);
+    parcelInfo.setContent("paczka jakaś");
 
     int  parcelId = controller.sendParcel(parcelInfo);
 

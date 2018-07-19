@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 
 public class PersonList {
 
-
     public static void main(String[] args) {
         List<Persons> personsList = new ArrayList<>(Arrays.asList(new Persons("jan", 17),  //to new ArrayList musi być dodane,
                 new Persons("anna", 20),                                                    // mimo że asList samo wywołuje new ArrayList,
@@ -17,7 +16,6 @@ public class PersonList {
                 .collect(Collectors.toList())
                 .forEach(name -> System.out.println(name));
         System.out.println();
-
 
         Predicate<Persons> personsPredicate = (persons -> (persons.getAge() < (18)) || (persons.getAge() < 21 && persons.getName().endsWith("a")));
         personsList.removeIf(personsPredicate);

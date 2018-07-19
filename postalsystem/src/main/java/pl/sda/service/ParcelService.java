@@ -5,6 +5,7 @@ import pl.sda.Model.ParcelStatus;
 import pl.sda.repository.ParcelRepository;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 public class ParcelService {
 
@@ -18,10 +19,14 @@ public class ParcelService {
     }
     //tu metoda, która będzie zapisywała do repo naszą przesyłkę
 
-    public  int saveParcel(ParcelInfo parcel){
+    public int saveParcel(ParcelInfo parcel) {
         parcel.setStatus(ParcelStatus.NEW);
         parcel.setShippmentDate(LocalDateTime.now());
 
         return repository.saveParcelInfo(parcel);
+    }
+
+    public Optional <ParcelInfo> getParcelById (int id){
+        return repository.getParcelById(id);
     }
 }

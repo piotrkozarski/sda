@@ -26,4 +26,11 @@ public class ParcelRepository {
 
     }
 
+    public List<ParcelInfo> getParcels() {
+        return parcels;
+    }
+
+    public static int getLastId() {
+        return lastId;
+    }
 }

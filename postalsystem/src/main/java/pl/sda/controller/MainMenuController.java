@@ -5,6 +5,8 @@ import pl.sda.Model.ParcelInfo;
 import pl.sda.service.ParcelService;
 import pl.sda.view.MainMenuView;
 
+import java.util.Optional;
+
 public class MainMenuController {
 
   private MainMenuView menuView;
@@ -34,8 +36,8 @@ public class MainMenuController {
 
   }
 
-  public ParcelInfo checkParcelStatus(String parcelId) {
+  public Optional <ParcelInfo> checkParcelStatus(int parcelId) {
 
-    return null;
+    return service.getParcelById(parcelId);
   }
 }

@@ -14,8 +14,6 @@ public class ProductRepository {
     public Product getById(int id){
         throw new UnsupportedOperationException();
     }
-    public List<Material> getMaterialByProduct(int id){
-        throw new UnsupportedOperationException();
-    }
+
 
 }

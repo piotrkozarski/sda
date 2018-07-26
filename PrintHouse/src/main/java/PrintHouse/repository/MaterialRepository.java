@@ -6,12 +6,15 @@ import java.util.List;
 
 public class MaterialRepository {
 
-    public List<Material> getAll(){
+    public List<Material> getAll() {
         throw new UnsupportedOperationException();
     }
 
-    public Material getById(int id){
+    public Material getById(int id) {
         throw new UnsupportedOperationException();
     }
 
+    public List<Material> getByProductId(int id) {
+        throw new UnsupportedOperationException();
+    }
 }

@@ -1,6 +1,7 @@
 package PrintHouse.service;
 
 import PrintHouse.model.Material;
+import PrintHouse.model.Product;
 import PrintHouse.repository.MaterialRepository;
 
 import java.util.List;
@@ -20,4 +21,8 @@ public class MaterialService {
     public Material getById(int id) {
         return repository.getById(id);
     }
+    public List<Material> getByProduct(Product product) {
+        return repository.getByProductId(product.getId());
+    }
+
 }

@@ -22,8 +22,6 @@ public class ProductService {
         return repository.getById(id);
     }
 
-    public List<Material> getMaterialByProduct(Product product) {
-        return repository.getMaterialByProduct(product.getId());
-    }
+
 
 }

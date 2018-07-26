@@ -3,6 +3,8 @@ package PrintHouse.service;
 import PrintHouse.model.User;
 import PrintHouse.repository.UserRepository;
 
+import java.util.Optional;
+
 public class UserService {
 
     private UserRepository repository;
@@ -13,6 +15,8 @@ public class UserService {
 
     //metoda do rejestracji:   /*void bo nie potrzebujemy, żeby coś zwracało */
     public void register(User user) {
+       Optional<User> userFromDb = repository.getUserByEmail(user.getEmail());
+
         repository.save(user);
     }
 
@@ -20,7 +24,8 @@ public class UserService {
         repository.update(user);
     }
 
-    public User getById(int userId) {
+    public Optional<User> getById(int userId)
+    {
         return repository.getById(userId);
     }
 }

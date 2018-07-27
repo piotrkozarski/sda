@@ -3,15 +3,12 @@ package PrintHouse.controller;
 import PrintHouse.model.Material;
 import PrintHouse.model.Order;
 import PrintHouse.model.OrderedProduct;
-import PrintHouse.model.Product;
 import PrintHouse.service.MaterialService;
 import PrintHouse.service.OrderService;
 
 import java.util.List;
 
 public class OrderController {
-    private OrderService service;
-
 
     private OrderService orderService;
     private MaterialService materialService;

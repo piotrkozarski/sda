@@ -1,5 +1,6 @@
 package PrintHouse.controller;
 
+import PrintHouse.exception.UserEmailExistException;
 import PrintHouse.model.User;
 import PrintHouse.service.UserService;
 import PrintHouse.utils.UserValidation;
@@ -13,8 +14,12 @@ public class UserController {
 
     public void register(User user) {
         if (UserValidation.isValid(user)) {
-            service.register(user);
+            try {
 
+                service.register(user);
+            } catch (UserEmailExistException e) {
+//TODO: Add logger and error message in view.
+            }
         }
     }
 }

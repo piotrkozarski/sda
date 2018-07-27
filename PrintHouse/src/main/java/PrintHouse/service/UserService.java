@@ -1,5 +1,6 @@
 package PrintHouse.service;
 
+import PrintHouse.exception.UserEmailExistException;
 import PrintHouse.model.User;
 import PrintHouse.repository.UserRepository;
 
@@ -14,18 +15,20 @@ public class UserService {
     }
 
     //metoda do rejestracji:   /*void bo nie potrzebujemy, żeby coś zwracało */
-    public void register(User user) {
-       Optional<User> userFromDb = repository.getUserByEmail(user.getEmail());
+    public void register(User user) throws UserEmailExistException {
+        Optional<User> userFromDb = repository.getUserByEmail(user.getEmail());
+        if (userFromDb.isPresent()){
+            throw new UserEmailExistException(user.getEmail());
 
-        repository.save(user);
+        }
+            repository.save(user);
     }
 
     public void update(User user) {
         repository.update(user);
     }
 
-    public Optional<User> getById(int userId)
-    {
+    public Optional<User> getById(int userId) {
         return repository.getById(userId);
     }
 }

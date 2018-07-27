@@ -1,5 +1,7 @@
 package PrintHouse.model;
 
+import java.util.Objects;
+
 public class Material {
     private int id;
     private String name;
@@ -36,5 +38,22 @@ public class Material {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Material material = (Material) o;
+        return id == material.id &&
+                Double.compare(material.multiplier, multiplier) == 0 &&
+                Objects.equals(name, material.name) &&
+                Objects.equals(description, material.description);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, name, multiplier, description);
     }
 }

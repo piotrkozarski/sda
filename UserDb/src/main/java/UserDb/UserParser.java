@@ -8,16 +8,26 @@ public class UserParser {
                 .append("login", user.getLogin())
                 .append("password", user.getPassword())
                 .append("name", user.getName())
-                .append("lastname", user.getLastName());
+                .append("lastname", user.getLastName()
+                );
     }
 
-    public static User getUser(Document document) {
+    public static User getUserById(Document document) {
         return new User(document.getInteger("id"),
                 document.getString("login"),
                 document.getString("password"),
                 document.getString("name"),
                 document.getString("lastname")
-
         );
     }
+    public static User getUserByLogin(Document document){
+        return new User(document.getString("login"),
+                document.getInteger("id"),
+                document.getString("name"),
+                document.getString("lastname")
+
+
+                );
+    }
+
 }

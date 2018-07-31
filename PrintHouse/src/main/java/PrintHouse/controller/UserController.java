@@ -12,14 +12,14 @@ public class UserController {
         this.service = service;
     }
 
-    public void register(User user) {
-        if (UserValidation.isValid(user)) {
-            try {
+        public void register(User user) {
+            if (UserValidation.isValid(user)) {
+                try {
+                    service.register(user);
 
-                service.register(user);
-            } catch (UserEmailExistException e) {
+                } catch (UserEmailExistException e) {
 //TODO: Add logger and error message in view.
+                }
             }
-        }
     }
 }

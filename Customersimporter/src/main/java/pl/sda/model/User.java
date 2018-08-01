@@ -12,7 +12,7 @@ public class User {
     private String email;
     private String web;
     private boolean isActive;
-;
+
 
     public String getFirstName() {
         return firstName;

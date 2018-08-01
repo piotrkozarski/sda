@@ -8,14 +8,6 @@ public class Addresses {
     private String zip;
 
 
-    public Addresses(String address, String city, String county, String state, String zip) {
-        this.address = address;
-        this.city = city;
-        this.county = county;
-        this.state = state;
-        this.zip = zip;
-    }
-
     public String getAddress() {
         return address;
     }

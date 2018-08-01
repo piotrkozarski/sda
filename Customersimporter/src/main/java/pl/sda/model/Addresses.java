@@ -1,14 +1,14 @@
-package pl.sda;
+package pl.sda.model;
 
 public class Addresses {
     private String address;
     private String city;
     private String county;
     private String state;
-    private int zip;
+    private String zip;
 
 
-    public Addresses(String address, String city, String county, String state, int zip) {
+    public Addresses(String address, String city, String county, String state, String zip) {
         this.address = address;
         this.city = city;
         this.county = county;
@@ -25,7 +25,7 @@ public class Addresses {
     }
 
     public String getCity() {
-        return address;
+        return city;
     }
 
     public void setCity(String city) {
@@ -48,11 +48,11 @@ public class Addresses {
         this.state = state;
     }
 
-    public int getZip() {
+    public String getZip() {
         return zip;
     }
 
-    public void setZip(int zip) {
+    public void setZip(String zip) {
         this.zip = zip;
     }
 }

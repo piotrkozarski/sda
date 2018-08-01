@@ -1,4 +1,6 @@
-package pl.sda;
+package pl.sda.model;
+
+import pl.sda.model.Addresses;
 
 public class User {
     private String firstName;
@@ -6,18 +8,11 @@ public class User {
     private String company;
     private Addresses address;
     private String phone;
+    private String fax;
     private String email;
     private String web;
-
-    public User(String firstName, String lastName, String company, Addresses address, String phone, String email, String web) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.company = company;
-        this.address = address;
-        this.phone = phone;
-        this.email = email;
-        this.web = web;
-    }
+    private boolean isActive;
+;
 
     public String getFirstName() {
         return firstName;
@@ -58,6 +53,12 @@ public class User {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+    public String getFax(){
+        return fax;
+    }
+    public void setFax(String fax){
+        this.fax = fax;
+    }
 
     public String getEmail() {
         return email;
@@ -73,5 +74,13 @@ public class User {
 
     public void setWeb(String web) {
         this.web = web;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }

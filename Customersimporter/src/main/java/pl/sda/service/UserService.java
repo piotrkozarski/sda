@@ -1,12 +1,15 @@
 package pl.sda.service;
 
 import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import  com.mongodb.client.model.Filters;
 import org.bson.Document;
 import pl.sda.model.User;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 public class UserService {
     MongoClient mongoClient = new MongoClient();
@@ -26,6 +29,16 @@ public class UserService {
 
         collection.insertOne(UserParser.getDocument(user));
 
+    }
+//TODO teraz sprawdzać czy za pomocą tego optionala ponizej, czy ten login jest i jak jest to update a jak nie to insert
 
+
+    public Optional<User> getUserByLogin(String login){
+        Document userDoc = collection.find(Filters.eq("Login", login)).first();
+
+        if (userDoc == null)
+            return Optional.empty();
+
+        return Optional.of(UserParser.getUser(userDoc));
     }
 }

@@ -22,8 +22,10 @@ public class UserService {
         user.setMtime(LocalDateTime.now());
 
         user.setLogin(user.getEmail().toLowerCase());
-        user.setPassword( user.getFirstName().toLowerCase().substring(0,1)+user.getLastName().toLowerCase());
+        user.setPassword(user.getFirstName().toLowerCase().substring(0, 1) + user.getLastName().toLowerCase());
 
         collection.insertOne(UserParser.getDocument(user));
+
+
     }
 }

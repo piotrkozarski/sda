@@ -109,13 +109,16 @@ public class User {
     public LocalDateTime getCtime() {
         return ctime;
     }
+
     public void setCtime(LocalDateTime ctime) {
         this.ctime = ctime;
     }
-    public LocalDateTime getMtime(){
+
+    public LocalDateTime getMtime() {
         return mtime;
     }
-    public void setMtime(LocalDateTime mtime){
+
+    public void setMtime(LocalDateTime mtime) {
         this.mtime = mtime;
     }
 

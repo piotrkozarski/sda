@@ -21,13 +21,18 @@ public class UserParser {
                 .append("Fax", user.getFax())
                 .append("Email", user.getEmail())
                 .append("Email", user.getEmail())
-                .append("Web", user.getWeb());
+                .append("Web", user.getWeb())
+
+                .append("Is_Active", user.getIsActive());
+
+
     }
+
 
     public static User getUser(Document document) {
         User user = new User();
 
-        Addresses address = new Addresses();  //TODO nie wiem co wpisać
+        Addresses address = new Addresses();
 
         user.setFirstName(document.getString("FirstName"));
         user.setLastName(document.getString("LastName"));
@@ -43,6 +48,7 @@ public class UserParser {
         user.setFax(document.getString("Fax"));
         user.setEmail(document.getString("Email"));
         user.setWeb(document.getString("Web"));
+        //     user.setIsActive(document.getBoolean("Is_Active"));
 
         return user;
     }

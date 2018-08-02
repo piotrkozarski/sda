@@ -28,6 +28,9 @@ public class CsvReader {
                 address.setCounty(record[5]);
                 address.setState(record[6]);
                 address.setZip(record[7]);
+
+                user.setAddress(address);
+
                 user.setPhone(record[8]);
                 user.setFax(record[9]);
                 user.setEmail(record[10]);

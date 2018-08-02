@@ -2,6 +2,8 @@ package pl.sda.model;
 
 import pl.sda.model.Addresses;
 
+import java.time.LocalDateTime;
+
 public class User {
     private String firstName;
     private String lastName;
@@ -12,6 +14,11 @@ public class User {
     private String email;
     private String web;
     private boolean isActive;
+    private LocalDateTime ctime = LocalDateTime.now();
+    private LocalDateTime mtime = LocalDateTime.now();
+    private String login;
+    private String password;
+
 
 
     public String getFirstName() {
@@ -76,11 +83,11 @@ public class User {
         this.web = web;
     }
 
-    public boolean isActive() {
-        return isActive;
+    public boolean getIsActive() {
+        return isActive = true;
     }
 
-    public void setActive(boolean active) {
+    public void setIsActive(boolean active) {
         isActive = active;
     }
 }

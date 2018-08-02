@@ -1,7 +1,5 @@
 package pl.sda.model;
 
-import pl.sda.model.Addresses;
-
 import java.time.LocalDateTime;
 
 public class User {
@@ -18,7 +16,6 @@ public class User {
     private LocalDateTime mtime = LocalDateTime.now();
     private String login;
     private String password;
-
 
 
     public String getFirstName() {
@@ -60,10 +57,12 @@ public class User {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public String getFax(){
+
+    public String getFax() {
         return fax;
     }
-    public void setFax(String fax){
+
+    public void setFax(String fax) {
         this.fax = fax;
     }
 
@@ -84,10 +83,40 @@ public class User {
     }
 
     public boolean getIsActive() {
-        return isActive = true;
+        return isActive;
     }
 
-    public void setIsActive(boolean active) {
-        isActive = active;
+    public void setIsActive(boolean isActive) {
+        this.isActive = isActive;
     }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public LocalDateTime getCtime() {
+        return ctime;
+    }
+    public void setCtime(LocalDateTime ctime) {
+        this.ctime = ctime;
+    }
+    public LocalDateTime getMtime(){
+        return mtime;
+    }
+    public void setMtime(LocalDateTime mtime){
+        this.mtime = mtime;
+    }
+
 }

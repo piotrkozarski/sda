@@ -22,9 +22,11 @@ public class UserParser {
                 .append("Email", user.getEmail())
                 .append("Email", user.getEmail())
                 .append("Web", user.getWeb())
-
-                .append("Is_Active", user.getIsActive());
-
+                .append("Is_Active", user.getIsActive())
+                .append("Login", user.getLogin())
+                .append("Password", user.getPassword())
+                .append("Ctime", user.getCtime())
+                .append("Mtime", user.getMtime());
 
     }
 
@@ -53,3 +55,5 @@ public class UserParser {
         return user;
     }
 }
+// TODO ma się razem z importem robić login(email), password(pierwsza litera imienia_nazwisko),
+// TODO active, ctime i mtime

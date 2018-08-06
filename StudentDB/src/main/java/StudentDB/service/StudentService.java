@@ -21,7 +21,7 @@ public class StudentService {
 
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement("INSERT INTO STUDENT VALUES (?, ?, ?, ? ?");
+            statement = connection.prepareStatement("INSERT INTO STUDENT(NAME, LASTNAME, INDEXNUMBER, YEAROFSTUDY, FIELDOFSTUDY) VALUES (?, ?, ?, ? ?");
             statement.setString(1, student.getFirstName());
             statement.setString(2, student.getLastName());
             statement.setInt(3, student.getIndexNumber());

@@ -5,7 +5,7 @@ Niestety istniejący system nie udostępnia możliwości pobrania z niego inform
 #### Napisz importer który dostarczy funkcjonalność: ####
 
 1. Wczytuje dane z przekazanego pliku i zapisuje je do bazy MongoDB.
-2. Jeśli dany rekord istnieje (e-mail musi być unikatowy) dany rekord powinien zostać zaaktualizowany .
+2. Jeśli dany rekord istnieje (e-mail musi być unikatowy) dany rekord powinien zostać zaktualizowany .
 3. Zaimportowany klient powinien posiadać pole active które będzie definiowało czy posiada aktywne konto (pola tego nie ma w dostarczonym pliku csv).
 4. Każdy klient powinien otrzymać też dane do logowania. Jako że dane te nie są udostępnione w pliku, na początku konto powinno zostać wygenerowane. Login = e-mail, hasło = pierwsza litera imienia i nazwisko (np. jkowalski). 
 5. Adres powinien być reprezentowany jako odrępna struktura wewnątrz klienta (np. klasa Address)

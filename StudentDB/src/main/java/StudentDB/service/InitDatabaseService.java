@@ -18,7 +18,7 @@ public class InitDatabaseService {
         Statement statement = null;
         try {
             statement = connection.createStatement();
-            statement.executeUpdate("CREATE TABLE STUDENT (ID INT NOT NULL AUTO_INCREMENT, NAME VARCHAR(50), LASTNAME VARCHAR(100), INDEXNUMBER INT, YEAROFSTUDY INT, FIELDOFSTUDY VARCHAR (100)) ");
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS STUDENT (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50), LASTNAME VARCHAR(100), INDEXNUMBER INT, YEAROFSTUDY INT, FIELDOFSTUDY VARCHAR (100)) ");
         } catch (SQLException ex) {
             LOG.error("nie udalo sie zainicjować bazy danych" + ex);
         } finally {

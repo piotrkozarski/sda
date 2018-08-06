@@ -21,7 +21,7 @@ public class StudentService {
 
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement("INSERT INTO STUDENT(NAME, LASTNAME, INDEXNUMBER, YEAROFSTUDY, FIELDOFSTUDY) VALUES (?, ?, ?, ? ?");
+            statement = connection.prepareStatement("INSERT INTO STUDENT(NAME, LASTNAME, INDEXNUMBER, YEAROFSTUDY, FIELDOFSTUDY) VALUES (?, ?, ?, ?, ?)");
             statement.setString(1, student.getFirstName());
             statement.setString(2, student.getLastName());
             statement.setInt(3, student.getIndexNumber());
@@ -33,6 +33,7 @@ public class StudentService {
             LOG.info("student dodany " + student.getLastName() + " " + student.getFirstName() + " do bazy");
         } catch (SQLException ex) {
             LOG.error("nie udało się zapisać studenta " + student.getLastName() + " " + student.getFirstName() + " do bazy ");
+            LOG.error(ex.getMessage());
         } finally {
             management.closeConnections(connection, statement);
         }

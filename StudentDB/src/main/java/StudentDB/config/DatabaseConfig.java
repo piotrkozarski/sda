@@ -11,3 +11,6 @@ public class DatabaseConfig {
     public static final String PASSWORD = "marmolada";
 
 }
+
+
+// w przypadku problemów z time zone, dodac w url bez spacji po nazwie bazy ?useLegacyDatetimeCode=false&serverTimezone=UTC

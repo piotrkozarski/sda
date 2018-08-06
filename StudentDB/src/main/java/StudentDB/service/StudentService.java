@@ -49,7 +49,9 @@ public class StudentService {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM STUDENT");
 
             while (resultSet.next()) {
+//TODO: prezentacja str 34 SELECT, trzeba utworzyc nowego Student-a żeby za jego pomocą wyświetlić wszystkie kolumny zdefiniowane w tym studencie
                 studentNames.add(resultSet.getString("name"));
+
             }
         } catch (SQLException ex) {
             LOG.error("nie udało się pobrać studentów z bazy" + ex);
@@ -57,6 +59,7 @@ public class StudentService {
             management.closeConnections(connection, statement);
         }
         return studentNames;
+
     }
 }
 

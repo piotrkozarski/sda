@@ -20,5 +20,7 @@ public class App {
         StudentService studentService = new StudentService();
 
         studentService.saveStudent(student);
+
+        System.out.println(studentService.getAll());
     }
 }

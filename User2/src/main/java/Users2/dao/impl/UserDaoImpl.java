@@ -13,6 +13,8 @@ public class UserDaoImpl implements UserDao {
 
     private Session currentSession;
     private Transaction currentTransaction;
+    private SessionFactory sessionFactory;
+
 
     public Session openCurrentSession() {
         currentSession = getSessionFactory().openSession();
@@ -53,14 +55,10 @@ public class UserDaoImpl implements UserDao {
         return currentSession;
     }
 
-    @Override
-    public void closeCurrentSessionWithTransaction() {
-        currentTransaction.commit();
-        currentSession.close();
-    }
 
     @Override
     public void closeCurrentSession() {
+        currentSession.close();
 
     }
 
@@ -68,8 +66,17 @@ public class UserDaoImpl implements UserDao {
     public SessionFactory getSessionFactory() {
         Configuration configuration = new Configuration();
         configuration.configure("/hibernate.cfg.xml");
-        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        sessionFactory = configuration.buildSessionFactory();
         return sessionFactory;
+    }
+
+
+    @Override
+    public void closeCurrentSessionWithTransaction() {
+        currentTransaction.commit();
+        currentSession.close();
+        sessionFactory.close();
+
     }
 
     @Override

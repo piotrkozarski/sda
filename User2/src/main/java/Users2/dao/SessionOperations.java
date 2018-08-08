@@ -6,15 +6,16 @@ import org.hibernate.Transaction;
 
 public interface SessionOperations {
 
-    Session openCurrentSession();
-
-    Session openCurrentSessionWithTransaction();
+ /*   Session openCurrentSession();
+*/
+  //  Session
+    void openCurrentSessionWithTransaction();
 
     void closeCurrentSessionWithTransaction();
 
-    void closeCurrentSession();
+  /*  void closeCurrentSession();
 
     SessionFactory getSessionFactory();
 
-    Transaction getCurrentTransaction();
+    Transaction getCurrentTransaction();*/
 }

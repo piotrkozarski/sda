@@ -15,7 +15,6 @@ public class App {
         user1.setName("Jan");
         user1.setLastName("Kowalski");
 
-
         User user2 = new User();
         user2.setCtime(LocalDateTime.now());
         user2.setLogin("anowak");
@@ -35,18 +34,25 @@ public class App {
         user4.setLastName("Wyczesany");
 
         UserService userService = new UserServiceImpl();
-        {
-            userService.save(user1);
-            userService.save(user2);
-            userService.save(user3);
-            userService.save(user4);
 
-            System.out.println("added " + user1.getName() + " " + user1.getLastName());
-            System.out.println("added " + user2.getName() + " " + user2.getLastName());
-            System.out.println("added " + user3.getName() + " " + user3.getLastName());
-            System.out.println("added " + user4.getName() + " " + user4.getLastName());
+        userService.save(user1);
+        userService.save(user2);
+        userService.save(user3);
+        userService.save(user4);
 
-        }
+        System.out.println("added " + user1.getName() + " " + user1.getLastName());
+        System.out.println("added " + user2.getName() + " " + user2.getLastName());
+        System.out.println("added " + user3.getName() + " " + user3.getLastName());
+        System.out.println("added " + user4.getName() + " " + user4.getLastName());
+
+
+        user2.setLastName("Nowakowska");
+
+        userService.update(user2);
+
+        System.out.println("modified " + user2.getName() + " " + user2.getLastName());
+
+        userService.delete(5);
 
     }
 }

@@ -1,25 +1,36 @@
 package Users2.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
 public class User {
+
+    @NotNull
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private int id;
 
+    @NotEmpty
+    @Size(min = 1, max = 30, message = "jakis message na min i max ilsc znakow")
     @Column(name = "LOGIN", length = 30)
     private String login;
 
+    @NotEmpty
     @Column(name = "NAME", length = 30)
     private String name;
 
+    @NotEmpty
     @Column(name = "LASTNAME", length = 50)
     private String lastName;
 
+    @Past
     @Column(name = "CTIME")
     private LocalDateTime ctime;
 

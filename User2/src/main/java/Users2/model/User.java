@@ -6,6 +6,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -33,6 +37,14 @@ public class User {
     @Past
     @Column(name = "CTIME")
     private LocalDateTime ctime;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "user_regions", joinColumns = {
+            @JoinColumn(name = "user_id")},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "region_id")})
+    private Set<Region> regions = new HashSet<>();
+
 
     public int getId() {
         return id;
@@ -73,6 +85,14 @@ public class User {
 
     public void setCtime(LocalDateTime ctime) {
         this.ctime = ctime;
+    }
+
+    public Set<Region> getRegions() {
+        return regions;
+    }
+
+    public void setRegions(Set<Region> regions) {
+        this.regions = regions;
     }
 
     @Override
